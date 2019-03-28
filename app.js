@@ -24,7 +24,7 @@ const indexRouter = require(path.join(__dirname, 'server', 'routes', 'index'))
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.json());
@@ -67,15 +67,14 @@ mongoose.connect(process.env.DATABASE, {
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', startServer);
-
-async function startServer(){
+db.once('open', async ()=>{
   console.log('MongoDB connection successful');
 
   // configure routes, authentication
+  await require(path.join(process.cwd(), 'server', 'auth'))();
 
   // async/await for all setup to complete before listening
   var server = app.listen(process.env.PORT || 3000, () => {
     console.log(`Listening on port ${server.address().port}`);
   })
-};
+});

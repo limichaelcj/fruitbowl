@@ -1,0 +1,11 @@
+body {
+  font-family: 'Roboto', monospace;
+  margin: 0;
+  padding: 0;
+  width: 100vw; }
+
+.container {
+  width: 800px;
+  max-width: 96vw;
+  min-width: 60vw;
+  margin: auto; }
