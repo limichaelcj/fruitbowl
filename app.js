@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const createError = require('http-errors')
+const helmet = require('helmet')
 const mongoose = require('mongoose')
 // auth, session
 const passport = require('passport')
@@ -26,6 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
+app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -67,7 +69,11 @@ mongoose.connect(process.env.DATABASE, {
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+<<<<<<< HEAD
 db.once('open', async ()=>{
+=======
+db.once('open', async()=>{
+>>>>>>> 638649c22007b2ff496791bf2b16cdf5a598618a
   console.log('MongoDB connection successful');
 
   // configure routes, authentication

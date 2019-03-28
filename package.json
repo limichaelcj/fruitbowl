@@ -1,7 +1,11 @@
 {
-  "name": "fruitbowl",
+  "name": "express-boilerplate",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "A socket.io chatroom app",
+=======
+  "description": "An express.js app preconfigured with pug, mongoose, passport, helmet, and socket.io",
+>>>>>>> 638649c22007b2ff496791bf2b16cdf5a598618a
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
