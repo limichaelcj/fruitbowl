@@ -69,11 +69,7 @@ mongoose.connect(process.env.DATABASE, {
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-<<<<<<< HEAD
 db.once('open', async ()=>{
-=======
-db.once('open', async()=>{
->>>>>>> 638649c22007b2ff496791bf2b16cdf5a598618a
   console.log('MongoDB connection successful');
 
   // configure routes, authentication
