@@ -6,7 +6,12 @@ const bcrypt = require('bcrypt')
 
 module.exports = async function(){
   await passport.use(new LocalStrategy((username, password, done)=>{
-    User.findOne({ username: username }, (err, user) => {
+    User.findOneAndUpdate({ username: username }, { // update paramaters
+      $set: { last_login: Date() },
+      $inc: { login_count: 1 }
+    }, { // update options
+      new: true // return updated doc
+    }, (err, user) => {
       console.log(`${Date()} :: Login attempt by user: ${username}`);
       // code error
       if (err) return done(err);

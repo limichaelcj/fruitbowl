@@ -17,11 +17,15 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/chat', (req,res)=>{
-  res.render('chat');
+  res.render('chat', {
+    user: req.user
+  });
 })
 
 router.get('/profile', (req,res)=>{
-  res.render('profile')
+  res.render('profile', {
+    user: req.user
+  });
 })
 
 router.post('/login', passport.authenticate('local', {

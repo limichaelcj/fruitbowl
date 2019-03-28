@@ -9,3 +9,41 @@ body {
   max-width: 96vw;
   min-width: 60vw;
   margin: auto; }
+
+.chatroom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box; }
+  .chatroom * {
+    box-sizing: border-box; }
+  .chatroom > * {
+    display: block; }
+  .chatroom .chatroom__header {
+    font-size: 1.2rem;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5rem; }
+  .chatroom .chatroom__feed {
+    height: 400px;
+    max-height: 90vh;
+    min-height: 50vh;
+    border: 1px solid gray; }
+  .chatroom .chatroom__form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding-top: 1rem; }
+    .chatroom .chatroom__form .chatroom__form__input {
+      flex: 1 1 auto;
+      padding: 0.5rem; }
+    .chatroom .chatroom__form .chatroom__form__submit {
+      flex: 0 0 5rem;
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 1rem; }
+      .chatroom .chatroom__form .chatroom__form__submit input {
+        width: 4rem;
+        padding: 0.5rem 1rem; }

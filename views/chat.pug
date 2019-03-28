@@ -1,12 +1,17 @@
 extends layout
 
 block content
-  h1 Chat
+  h1 Fruitbowl
+  if user
+    .user-dock
+      span Logged in as: 
+      span= user.username
   .chatroom
-    h2 Chatroom name
+    .chatroom__header Chatroom
     .chatroom__feed
       .chatroom__entry--notice
       .chatroom__entry--message
-    .chatroom__form
-      .chatroom__form__input
+    form.chatroom__form(id='chatroom-form' action='/chat/send' method='post')
+      input.chatroom__form__input
       .chatroom__form__submit
+        input(type='submit', value='Send')

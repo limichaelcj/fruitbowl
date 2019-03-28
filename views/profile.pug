@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1 Profile
-  h2= Username
+  h2= user.username
   .user-stats
     .user-stats__entry
       b Messages submitted: 
-      span 10
+      span= user.total_messages
     .user-stats__entry
       b Last login: 
-      span Yesterday
+      span= user.last_login.toDateString()
