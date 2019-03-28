@@ -8,9 +8,11 @@ block content
       span= user.username
   .chatroom
     .chatroom__header Chatroom
-    .chatroom__feed
-      .chatroom__entry--notice
-      .chatroom__entry--message
+    .chatroom__info
+      span#user-count 0
+      - var userCountString = " users online"
+      span= userCountString
+    ul.chatroom__feed
     form.chatroom__form(id='chatroom-form' action='/chat/send' method='post')
       input.chatroom__form__input
       .chatroom__form__submit

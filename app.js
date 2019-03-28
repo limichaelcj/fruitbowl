@@ -14,11 +14,14 @@ const app = express();
 // server, socket
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
-const passportSocketIO = require('passport.socketio')
+const passportSocketIO = require('passport.socketio');
 // dev dependencies
 const path = require('path')
 const logger = require('morgan')
 const debug = require('debug')
+// server files
+const configAuth = require(path.join(__dirname, 'server', 'auth'));
+const configSocket = require(path.join(__dirname, 'server', 'socket'));
 // routes
 const indexRouter = require(path.join(__dirname, 'server', 'routes', 'index'))
 
@@ -73,10 +76,19 @@ db.once('open', async ()=>{
   console.log('MongoDB connection successful');
 
   // configure routes, authentication
-  await require(path.join(process.cwd(), 'server', 'auth'))();
+  await configAuth();
 
   // async/await for all setup to complete before listening
   var server = app.listen(process.env.PORT || 3000, () => {
     console.log(`Listening on port ${server.address().port}`);
-  })
+  });
+
+  // run socket configuration after successful server startup
+  io.use(passportSocketIO.authorize({
+    cookieParser: cookieParser,
+    key: 'express.sid',
+    secret: process.env.SECRET,
+    store: sessionStore
+  }));
+  configSocket(io);
 });

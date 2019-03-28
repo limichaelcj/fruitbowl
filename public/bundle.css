@@ -20,21 +20,33 @@ body {
   .chatroom * {
     box-sizing: border-box; }
   .chatroom > * {
-    display: block; }
+    display: block;
+    margin: 0 0 0.5rem 0; }
+    .chatroom > *:last-child {
+      margin: 0; }
   .chatroom .chatroom__header {
-    font-size: 1.2rem;
-    padding: 0.5em 1em;
-    margin-bottom: 0.5rem; }
+    font-size: 1.4rem;
+    padding: 0.5rem; }
+  .chatroom .chatroom__info {
+    padding: 0.5rem; }
   .chatroom .chatroom__feed {
     height: 400px;
     max-height: 90vh;
     min-height: 50vh;
     border: 1px solid gray; }
+    .chatroom .chatroom__feed .chatroom__post {
+      margin: 0 0.5em 0.5em 0.5em;
+      box-shadow: 5px 5px 10px 10px rgba(68, 68, 68, 0.3);
+      padding: 1em;
+      display: block; }
+    .chatroom .chatroom__feed .chatroom__post--notice {
+      color: dodgerblue; }
+    .chatroom .chatroom__feed .chatroom__post--message {
+      color: black; }
   .chatroom .chatroom__form {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 0;
     padding-top: 1rem; }
     .chatroom .chatroom__form .chatroom__form__input {
       flex: 1 1 auto;
