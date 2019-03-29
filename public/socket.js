@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/client.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/socket.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -628,26 +628,15 @@ eval("\n\nvar alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqr
 
 /***/ }),
 
-/***/ "./src/client.js":
+/***/ "./src/socket.js":
 /*!***********************!*\
-  !*** ./src/client.js ***!
+  !*** ./src/socket.js ***!
   \***********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sass/style.scss */ \"./src/sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! socket.io-client */ \"./node_modules/socket.io-client/lib/index.js\");\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_1__);\n // const io = require('socket.io-client');\n\n\nvar socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1___default()();\n\nif (document.readyState !== 'loading') {\n  start();\n} else {\n  document.addEventListener('DOMContentLoaded', start);\n}\n\nfunction start() {\n  // socket configuration\n  socket.on('user', function (data) {\n    document.getElementById('user-count').innerHTMl = data.userCount;\n    var text = \"\".concat(data.name, \" has \").concat(data.connected ? 'joined' : 'left', \" the room.\");\n    addPost(text, 'notice');\n    scrollToBottom(document.querySelector('.chatroom__feed'));\n  });\n  socket.on('chat message', function (data) {\n    addPost(data, 'message');\n    scrollToBottom(document.querySelector('.chatroom__feed'));\n  }); // ajax form submission\n\n  var form = document.querySelector('#chatroom-form');\n\n  form.onsubmit = function (e) {\n    e.preventDefault();\n    var input = document.querySelector('.chatroom__form__input');\n    var message = input.value;\n    if (message.trim() === '') return false;else {\n      socket.emit('chat message', message);\n      input.value = '';\n    }\n  };\n}\n\nfunction addPost(data) {\n  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'message';\n  var feed = document.querySelector('.chatroom__feed');\n  var className = \"chatroom__post chatroom__post--\".concat(type);\n  var elem = document.createElement('li');\n  elem.className = className;\n  elem.innerHTML = type === 'message' ? \"<b>\".concat(data.names, \":</b> \").concat(data.message) : data;\n  feed.append(elem);\n}\n\nfunction scrollToBottom(elem) {\n  elem.scrollTop = elem.scrollHeight;\n}\n\n//# sourceURL=webpack:///./src/client.js?");
-
-/***/ }),
-
-/***/ "./src/sass/style.scss":
-/*!*****************************!*\
-  !*** ./src/sass/style.scss ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/sass/style.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! socket.io-client */ \"./node_modules/socket.io-client/lib/index.js\");\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_0__);\n// const io = require('socket.io-client');\n\nvar socket = socket_io_client__WEBPACK_IMPORTED_MODULE_0___default()();\n\nif (document.readyState !== 'loading') {\n  start();\n} else {\n  document.addEventListener('DOMContentLoaded', start);\n}\n\nfunction start() {\n  // socket configuration\n  socket.on('user', function (data) {\n    document.getElementById('user-count').innerHTML = data.userCount;\n    var text = \"\".concat(data.name, \" has \").concat(data.connected ? 'joined' : 'left', \" the room.\");\n    addPost(text, 'notice');\n    scrollToBottom(document.querySelector('.chatroom__feed'));\n  });\n  socket.on('chat message', function (data) {\n    addPost(data, 'message');\n    scrollToBottom(document.querySelector('.chatroom__feed'));\n  }); // ajax form submission\n\n  var form = document.querySelector('#chatroom-form');\n\n  form.onsubmit = function (e) {\n    e.preventDefault();\n    var input = document.querySelector('.chatroom__form__input');\n    var message = input.value;\n    if (message.trim() === '') return false;else {\n      socket.emit('chat message', message);\n      input.value = '';\n    }\n  };\n}\n\nfunction addPost(data) {\n  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'message';\n  var feed = document.querySelector('.chatroom__feed');\n  var className = \"chatroom__post chatroom__post--\".concat(type);\n  var elem = document.createElement('li');\n  elem.className = className;\n  elem.innerHTML = type === 'message' ? \"<b>\".concat(data.name, \":</b> \").concat(data.message) : data;\n  feed.append(elem);\n}\n\nfunction scrollToBottom(elem) {\n  elem.scrollTop = elem.scrollHeight;\n}\n\n//# sourceURL=webpack:///./src/socket.js?");
 
 /***/ }),
 
