@@ -18,9 +18,11 @@ function start(){
     document.getElementById('user-count').innerHTMl = data.userCount;
     var text = `${data.name} has ${data.connected ? 'joined' : 'left'} the room.`;
     addPost(text, 'notice');
+    scrollToBottom(document.querySelector('.chatroom__feed'));
   });
   socket.on('chat message', data => {
     addPost(data, 'message');
+    scrollToBottom(document.querySelector('.chatroom__feed'));
   });
 
   // ajax form submission
@@ -46,5 +48,7 @@ function addPost(data, type='message'){
   elem.innerHTML = type === 'message'
     ? `<b>${data.name}:</b> ${data.message}` : data;
   feed.append(elem);
-  feed.scrollTop = elem.scrollHeight;
+}
+function scrollToBottom(elem){
+  elem.scrollTop = elem.scrollHeight;
 }
