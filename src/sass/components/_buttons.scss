@@ -1,0 +1,23 @@
+.button {
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid $md-primary;
+  color: $md-primary;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  transition: $transition-default;
+}
+
+.button:hover {
+  color: $white;
+  background-color: $md-primary;
+  box-shadow: 5px 5px 10px $shadow;
+  border-color: $md-primary-dark;
+}
+
+.button:active {
+  box-shadow: none;
+  color: $white-light;
+  background-color: $md-primary-light;
+}

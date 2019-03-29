@@ -4,11 +4,36 @@ body {
   padding: 0;
   width: 100vw; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .container {
   width: 800px;
   max-width: 96vw;
   min-width: 60vw;
   margin: auto; }
+
+.button {
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #4285f4;
+  color: #4285f4;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  transition: 250ms; }
+
+.button:hover {
+  color: #fafafa;
+  background-color: #4285f4;
+  box-shadow: 5px 5px 10px rgba(72, 72, 72, 0.3);
+  border-color: #0d47a1; }
+
+.button:active {
+  box-shadow: none;
+  color: #ffffff;
+  background-color: #80b4ff; }
 
 .chatroom {
   width: 100%;
@@ -59,3 +84,10 @@ body {
       .chatroom .chatroom__form .chatroom__form__submit input {
         width: 4rem;
         padding: 0.5rem 1rem; }
+
+.user-dock {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem; }
+
+.margin-bottom {
+  margin-bottom: 1rem; }

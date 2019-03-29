@@ -22,7 +22,7 @@ router.get('/chat', (req,res)=>{
   });
 })
 
-router.get('/profile', (req,res)=>{
+router.get('/profile', ensureAuthenticated, (req,res)=>{
   res.render('profile', {
     user: req.user
   });
