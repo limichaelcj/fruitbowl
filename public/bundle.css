@@ -8,6 +8,17 @@ a {
   text-decoration: none;
   color: inherit; }
 
+ul {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+li {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
 .container {
   width: 800px;
   max-width: 96vw;
@@ -58,16 +69,18 @@ a {
     height: 400px;
     max-height: 90vh;
     min-height: 50vh;
-    border: 1px solid gray; }
+    border: 1px solid #212121;
+    overflow-y: auto; }
     .chatroom .chatroom__feed .chatroom__post {
       margin: 0 0.5em 0.5em 0.5em;
-      box-shadow: 5px 5px 10px 10px rgba(68, 68, 68, 0.3);
+      box-shadow: 5px 5px 10px rgba(72, 72, 72, 0.3);
       padding: 1em;
       display: block; }
     .chatroom .chatroom__feed .chatroom__post--notice {
-      color: dodgerblue; }
+      color: #007FFF;
+      font-weight: bold; }
     .chatroom .chatroom__feed .chatroom__post--message {
-      color: black; }
+      color: #212121; }
   .chatroom .chatroom__form {
     display: flex;
     flex-direction: row;

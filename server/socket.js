@@ -22,6 +22,7 @@ module.exports = function(io) {
     });
 
     socket.on('chat message', message => {
+      console.log('message received: ' + message)
       io.emit('chat message', {
         name: socket.request.user.username,
         message

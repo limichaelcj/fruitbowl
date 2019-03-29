@@ -13,8 +13,21 @@ a:hover {
 
 }
 a:active {
-  
+
 }
 a:visited {
 
+}
+
+ul {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

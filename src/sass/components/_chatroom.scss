@@ -29,19 +29,21 @@
     height: 400px;
     max-height: 90vh;
     min-height: 50vh;
-    border: 1px solid gray;
+    border: 1px solid $black;
+    overflow-y: auto;
 
     .chatroom__post {
       margin: 0 0.5em 0.5em 0.5em;
-      box-shadow: 5px 5px 10px 10px rgba(#444, 0.3);
+      box-shadow: 5px 5px 10px $shadow;
       padding: 1em;
       display: block;
     }
     .chatroom__post--notice {
-      color: dodgerblue;
+      color: $azure;
+      font-weight: bold;
     }
     .chatroom__post--message {
-      color: black;
+      color: $black;
     }
   }
   .chatroom__form {

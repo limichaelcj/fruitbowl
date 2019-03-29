@@ -79,9 +79,9 @@ db.once('open', async ()=>{
   await configAuth();
 
   // async/await for all setup to complete before listening
-  var server = app.listen(process.env.PORT || 3000, () => {
-    console.log(`Listening on port ${server.address().port}`);
-  });
+  var port = process.env.PORT || 3000;
+  await http.listen(port);
+  console.log(`Server listening on port ${port}...`);
 
   // run socket configuration after successful server startup
   io.use(passportSocketIO.authorize({
