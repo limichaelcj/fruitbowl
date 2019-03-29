@@ -14,7 +14,6 @@ if (document.readyState !== 'loading'){
 function start(){
   // socket configuration
   socket.on('user', data => {
-    console.log(data.userCount);
     document.getElementById('user-count').innerHTMl = data.userCount;
     var text = `${data.name} has ${data.connected ? 'joined' : 'left'} the room.`;
     addPost(text, 'notice');
@@ -34,7 +33,6 @@ function start(){
     if (message.trim() === '') return false;
     else {
       socket.emit('chat message', message);
-      console.log('message sent')
       input.value = '';
     }
   }
@@ -46,7 +44,7 @@ function addPost(data, type='message'){
   var elem = document.createElement('li');
   elem.className = className;
   elem.innerHTML = type === 'message'
-    ? `<b>${data.name}:</b> ${data.message}` : data;
+    ? `<b>${data.names}:</b> ${data.message}` : data;
   feed.append(elem);
 }
 function scrollToBottom(elem){
