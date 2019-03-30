@@ -39,11 +39,27 @@ function start(){
 function addPost(data, type='message'){
   var feed = document.querySelector('.chatroom__feed');
   var className = `chatroom__post chatroom__post--${type}`;
-  var elem = document.createElement('li');
-  elem.className = className;
-  elem.innerHTML = type === 'message'
-    ? `<b>${data.name}:</b> ${data.message}` : data;
-  feed.append(elem);
+
+  var post = document.createElement('li');
+  post.className = className;
+
+  var text = document.createElement('div');
+  text.className = "chatroom__post__text";
+  text.innerHTML = type === 'message' ? data.message : data;
+  post.append(text);
+
+  var avatar = document.createElement('div');
+  avatar.className = "chatroom__post__avatar";
+  var avatarCircle = document.createElement('div');
+  avatarCircle.className = "chatroom__post__avatar__circle";
+  var avatarImg = type === 'message'
+    ? data.name[0] : '%';
+  avatarCircle.innerHTML = `<b>${avatarImg}</b>`;
+  avatarCircle.title = type === 'message' ? data.name : 'Server Notice';
+  avatar.append(avatarCircle);
+  post.append(avatar);
+
+  feed.append(post);
 }
 function scrollToBottom(elem){
   elem.scrollTop = elem.scrollHeight;

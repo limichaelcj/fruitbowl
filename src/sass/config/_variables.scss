@@ -9,3 +9,16 @@ $color-sec-light: $jade-light;
 $shadow: rgba($black-light, 0.3);
 
 $transition-default: 250ms;
+$transition-chat: 150ms;
+
+$bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+
+// components
+$chat-message-bg: $blue;
+$chat-message-text: $white;
+$chat-message-avatar-bg: $blue-light;
+$chat-notice-text: $mantis-dark;
+$chat-notice-bg: $mantis-light;
+$chat-notice-border: $mantis-dark;
+$chat-notice-avatar-bg: $mantis-light;
+$chat-avatar-color: $white;

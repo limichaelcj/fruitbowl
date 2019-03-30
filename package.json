@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "fruitbowl",
   "version": "1.0.0",
   "description": "A socket.io chatroom app",
   "main": "app.js",

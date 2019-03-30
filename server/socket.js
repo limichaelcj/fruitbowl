@@ -3,7 +3,7 @@ module.exports = function(io) {
   var userCount = 0;
 
   io.on('connection', socket => {
-    console.log(`${socket.request.user.username} connected.`);
+    console.log(`Connection to user '${socket.request.user.username}'`);
     userCount++;
     io.emit('user', {
       name: socket.request.user.username,

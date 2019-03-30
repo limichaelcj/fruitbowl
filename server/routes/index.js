@@ -16,7 +16,7 @@ router.get('/', (req,res)=>{
   res.render('index');
 })
 
-router.get('/chat', (req,res)=>{
+router.get('/chat', ensureAuthenticated, (req,res)=>{
   res.render('chat', {
     user: req.user
   });
