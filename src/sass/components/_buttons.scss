@@ -20,4 +20,18 @@
   box-shadow: none;
   color: $white-light;
   background-color: $md-primary-light;
+  transform-origin: 50% 50%;
+}
+
+.button--effect {
+  transition-duration: $transition-chat;
+  transition-timing-function: $bezier-bounce;
+}
+.button--effect:hover {
+  box-shadow: 2px 2px 5px $shadow;
+  transform: translate(-1px, -1px) scale(1.1);
+}
+.button--effect:active {
+  box-shadow: none;
+  transform: translate(0,0) scale(1);
 }

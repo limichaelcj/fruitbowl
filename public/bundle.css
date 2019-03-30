@@ -44,7 +44,20 @@ li {
 .button:active {
   box-shadow: none;
   color: #ffffff;
-  background-color: #80b4ff; }
+  background-color: #80b4ff;
+  transform-origin: 50% 50%; }
+
+.button--effect {
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.21, 1.11, 0.6, 1.15); }
+
+.button--effect:hover {
+  box-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3);
+  transform: translate(-1px, -1px) scale(1.1); }
+
+.button--effect:active {
+  box-shadow: none;
+  transform: translate(0, 0) scale(1); }
 
 .chatroom {
   width: 100%;
@@ -72,7 +85,7 @@ li {
     max-height: 90vh;
     min-height: 50vh;
     border: 1px solid #212121;
-    overflow-y: scroll;
+    overflow: scroll;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -143,13 +156,21 @@ li {
       flex: 1 1 auto;
       padding: 0.5rem; }
     .chatroom .chatroom__form .chatroom__form__submit {
-      flex: 0 0 5rem;
+      flex: 0 0 3rem;
       display: flex;
       justify-content: flex-end;
-      padding-left: 1rem; }
-      .chatroom .chatroom__form .chatroom__form__submit input {
-        width: 4rem;
-        padding: 0.5rem 1rem; }
+      align-items: center; }
+      .chatroom .chatroom__form .chatroom__form__submit i {
+        border-radius: 50%;
+        height: 2em;
+        width: 2em;
+        margin: auto;
+        padding: auto;
+        color: #fafafa;
+        background-color: #2196F3;
+        text-align: center;
+        line-height: 2em;
+        cursor: pointer; }
 
 @keyframes post-message {
   from {
