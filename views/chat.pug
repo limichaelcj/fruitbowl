@@ -11,10 +11,10 @@ block content
     .chatroom__info
       span#user-count 0
       span= " user(s) online"
-    ul.chatroom__feed
+    ul.chatroom__feed.chatroom--inset
     form.chatroom__form#chatroom-form(action='/chat/send' method='post')
-      input.chatroom__form__input
-      .chatroom__form__submit
+      input.chatroom__form__input.chatroom--inset
+      .chatroom__form__submit(title="Send")
         i.fas.fa-paper-plane.button--effect(onclick="document.getElementById('form-submit').click()")
       input#form-submit(type='submit' hidden)
   script(type="text/javascript" src="socket.js")

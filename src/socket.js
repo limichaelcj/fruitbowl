@@ -50,13 +50,15 @@ function addPost(data, type='message'){
 
   var avatar = document.createElement('div');
   avatar.className = "chatroom__post__avatar";
-  var avatarCircle = document.createElement('div');
-  avatarCircle.className = "chatroom__post__avatar__circle";
-  var avatarImg = type === 'message'
+  // if (type === 'message'){
+    var avatarCircle = document.createElement('div');
+    avatarCircle.className = "chatroom__post__avatar__circle";
+    var avatarImg = type === 'message'
     ? data.name[0] : '%';
-  avatarCircle.innerHTML = `<b>${avatarImg}</b>`;
-  avatarCircle.title = type === 'message' ? data.name : 'Server Notice';
-  avatar.append(avatarCircle);
+    avatarCircle.innerHTML = `<b>${avatarImg}</b>`;
+    avatarCircle.title = type === 'message' ? data.name : 'Server Notice';
+    avatar.append(avatarCircle);
+  // }
   post.append(avatar);
 
   feed.append(post);

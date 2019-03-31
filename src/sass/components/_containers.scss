@@ -3,4 +3,8 @@
   max-width: 96vw;
   min-width: 60vw;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
