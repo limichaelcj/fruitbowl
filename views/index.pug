@@ -1,23 +1,27 @@
 extends layout
 
 block content
-  h1 Fruitbowl Chat
-  hr
-  form(id='register' action='/register' method='post')
-    .form-row
-      .form-header Register
-    .form-row
-      input(name='username' type='text' placeholder='username')
-    .form-row
-      input(name='password' type='password' placeholder='password')
-    .form-row
-      input(type='submit' value='Submit')
-  form(id='login' action='/login' method='post')
-    .form-row
-      .form-header Login
-    .form-row
-      input(name='username' type='text' placeholder='username')
-    .form-row
-      input(name='password' type='password' placeholder='password')
-    .form-row
-      input(type='submit' value='Submit')
+  .fruitbowl-header
+    .fruitbowl-header__skin
+    .fruitbowl-header__shape
+    h1.fruitbowl-header__title fruitbowl
+  h2.fruitbowl-subheader join the conversation
+  .forms-box
+    form(id='register' action='/register' method='post')
+      .form-row
+        .form-header Register
+      .form-row
+        input(name='username' type='text' placeholder='username')
+      .form-row
+        input(name='password' type='password' placeholder='password')
+      .form-row
+        input.clickable(type='submit' value='Submit')
+    form(id='login' action='/login' method='post')
+      .form-row
+        .form-header Login
+      .form-row
+        input(name='username' type='text' placeholder='username')
+      .form-row
+        input(name='password' type='password' placeholder='password')
+      .form-row
+        input.clickable(type='submit' value='Submit')

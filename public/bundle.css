@@ -1,8 +1,11 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Gamja+Flower);body {
   font-family: 'Roboto', monospace;
   margin: 0;
   padding: 0;
-  width: 100vw; }
+  width: 100vw;
+  font-size: 16px;
+  background-image: url("/assets/bg.jpg");
+  background-repeat: repeat; }
 
 a {
   text-decoration: none;
@@ -200,3 +203,63 @@ li {
 
 .margin-bottom {
   margin-bottom: 1rem; }
+
+.clickable {
+  cursor: pointer; }
+
+.fruitbowl-header {
+  position: relative; }
+  .fruitbowl-header .fruitbowl-header__skin {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    background: repeating-linear-gradient(-20deg, #5a9216, #bef67a 20%, #5a9216 40%);
+    transform: translate(0, -50%) scaleY(1.3) scaleX(2); }
+  .fruitbowl-header .fruitbowl-header__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(-20deg, #e34234, #ff765f);
+    transform: translate(0, -52%) scaleY(1.2) scaleX(1.95); }
+  .fruitbowl-header .fruitbowl-header__title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 1rem;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gamja Flower', serif;
+    font-size: 2rem; }
+
+.fruitbowl-subheader {
+  font-family: 'Gamja Flower', serif;
+  font-size: 1.5rem;
+  color: #212121; }
+
+.forms-box {
+  box-shadow: 10px 10px 20px rgba(72, 72, 72, 0.3);
+  border-radius: 15px;
+  background: linear-gradient(-20deg, #8BC34A, #bef67a);
+  border: 3px solid rgba(90, 146, 22, 0.2);
+  padding: 2rem; }
+  .forms-box .form-row:last-child {
+    text-align: center; }
+  .forms-box form * {
+    margin: 0.25rem; }
+  .forms-box form *:last-child {
+    margin: 0; }
+  .forms-box form input {
+    padding: 0.5em;
+    border-radius: 3px; }
+  .forms-box form:first-child {
+    margin-bottom: 1.5rem; }

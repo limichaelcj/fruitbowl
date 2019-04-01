@@ -13,7 +13,15 @@ $transition-chat: 150ms;
 
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
 
-// components
+// globals
+$text: $black;
+$text-inverted: $white;
+
+// home
+$forms-box-bg: linear-gradient(-20deg, $mantis, $mantis-light);;
+$forms-box-border: rgba($mantis-dark, 0.2);
+
+// chatroom
 $chatroom-bg: rgba($sky-light, 0.3);
 $chatroom-border: rgba($sky-dark, 0.2);
 $chatroom-inset-bg: $white;
