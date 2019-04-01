@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', monospace;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -10,13 +10,14 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: $sunglow;
+  cursor: pointer;
 }
 a:hover {
-
+  text-decoration: underline;
 }
 a:active {
-
+  color: $sunglow-light;
 }
 a:visited {
 
@@ -33,4 +34,17 @@ li {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+input {
+  background-color: $white;
+  border: 1px solid rgba($silver-dark, 0.3);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+input:active {
+  outline: none;
+}
+input:visited {
+  outline: none;
 }

@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1 Profile
-  h2= user.username
+  h1.profile-header #{user.username}'s Profile
   .user-stats
+    h2 Statistics
     .user-stats__entry
       b Messages submitted: 
       span= user.total_messages

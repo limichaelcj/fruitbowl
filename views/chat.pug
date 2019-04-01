@@ -5,11 +5,11 @@ block content
   if user
     .user-dock
       span Logged in as: 
-      span= user.username
+      a(href='/profile')= user.username
   .chatroom
     .chatroom__header Chatroom
     .chatroom__info
-      span#user-count 0
+      b#user-count 0
       span= " user(s) online"
     ul.chatroom__feed.chatroom--inset
     form.chatroom__form#chatroom-form(action='/chat/send' method='post')

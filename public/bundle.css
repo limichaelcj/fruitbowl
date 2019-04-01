@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Gamja+Flower);body {
-  font-family: 'Roboto', monospace;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono|Gamja+Flower);body {
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -9,7 +9,14 @@
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: #ffcc33;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
+
+a:active {
+  color: #ffff69; }
 
 ul {
   box-sizing: border-box;
@@ -21,6 +28,18 @@ li {
   box-sizing: border-box;
   padding: 0;
   margin: 0; }
+
+input {
+  background-color: #fafafa;
+  border: 1px solid rgba(144, 144, 144, 0.3);
+  padding: 0.5rem;
+  border-radius: 5px; }
+
+input:active {
+  outline: none; }
+
+input:visited {
+  outline: none; }
 
 .container {
   width: 800px;
@@ -34,25 +53,26 @@ li {
 
 .button {
   box-sizing: border-box;
-  border-radius: 10px;
-  background-color: transparent;
-  border: 1px solid #4285f4;
-  color: #4285f4;
-  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background-color: #bef67a;
+  border: 2px solid #5a9216;
+  color: #5a9216;
+  padding: 0.6em 1.2em;
   display: inline-block;
-  transition: 250ms; }
+  transition: 250ms;
+  cursor: pointer; }
 
 .button:hover {
-  color: #fafafa;
-  background-color: #4285f4;
+  color: #5a9216;
   box-shadow: 5px 5px 10px rgba(72, 72, 72, 0.3);
-  border-color: #0d47a1; }
+  border-color: rgba(90, 146, 22, 0.5); }
 
 .button:active {
   box-shadow: none;
-  color: #ffffff;
-  background-color: #80b4ff;
-  transform-origin: 50% 50%; }
+  color: #fafafa;
+  background-color: #8BC34A;
+  transform-origin: 50% 50%;
+  border-color: #fafafa; }
 
 .button--effect {
   transition-duration: 150ms;
@@ -109,8 +129,6 @@ li {
       width: 0;
       height: 0; }
     .chatroom .chatroom__feed .chatroom__post {
-      min-width: 60%;
-      max-width: 100%;
       margin: 0 0 0.5em 0;
       padding: 0 0.5em;
       display: flex;
@@ -119,7 +137,7 @@ li {
       .chatroom .chatroom__feed .chatroom__post .chatroom__post__text {
         box-shadow: 5px 5px 10px rgba(72, 72, 72, 0.3);
         padding: 0.6em 1.2em;
-        flex: 1 1 auto;
+        flex: 0 1 calc(100% - 3em);
         color: #fafafa;
         transform-origin: 100% 90%;
         animation: post-message 150ms cubic-bezier(0.21, 1.11, 0.6, 1.15) 1; }
@@ -235,11 +253,12 @@ li {
     width: 100%;
     left: 0;
     top: 1rem;
-    color: #212121;
+    color: #fafafa;
     margin: 0;
     padding: 0;
     font-family: 'Gamja Flower', serif;
-    font-size: 2rem; }
+    font-size: 2rem;
+    text-align: center; }
 
 .fruitbowl-subheader {
   font-family: 'Gamja Flower', serif;
@@ -253,13 +272,23 @@ li {
   border: 3px solid rgba(90, 146, 22, 0.2);
   padding: 2rem; }
   .forms-box .form-row:last-child {
-    text-align: center; }
+    text-align: right; }
   .forms-box form * {
     margin: 0.25rem; }
   .forms-box form *:last-child {
     margin: 0; }
-  .forms-box form input {
-    padding: 0.5em;
-    border-radius: 3px; }
   .forms-box form:first-child {
     margin-bottom: 1.5rem; }
+
+.profile-header {
+  margin-top: 2rem;
+  font-family: 'Gamja Flower', serif; }
+
+.user-stats {
+  background: linear-gradient(-20deg, #8BC34A, #bef67a);
+  border: 2px solid rgba(90, 146, 22, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem; }
+  .user-stats h2 {
+    margin-top: 0; }

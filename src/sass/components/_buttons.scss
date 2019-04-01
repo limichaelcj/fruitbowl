@@ -1,26 +1,27 @@
 .button {
   box-sizing: border-box;
-  border-radius: 10px;
-  background-color: transparent;
-  border: 1px solid $md-primary;
-  color: $md-primary;
-  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background-color: $mantis-light;
+  border: 2px solid $mantis-dark;
+  color: $mantis-dark;
+  padding: 0.6em 1.2em;
   display: inline-block;
   transition: $transition-default;
+  cursor: pointer;
 }
 
 .button:hover {
-  color: $white;
-  background-color: $md-primary;
+  color: $mantis-dark;
   box-shadow: 5px 5px 10px $shadow;
-  border-color: $md-primary-dark;
+  border-color: rgba($mantis-dark, 0.5);
 }
 
 .button:active {
   box-shadow: none;
-  color: $white-light;
-  background-color: $md-primary-light;
+  color: $white;
+  background-color: $mantis;
   transform-origin: 50% 50%;
+  border-color: $white;
 }
 
 .button--effect {

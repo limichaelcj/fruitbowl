@@ -30,11 +30,12 @@
     width: 100%;
     left: 0;
     top: 1rem;
-    color: $text;
+    color: $text-inverted;
     margin: 0;
     padding: 0;
     font-family: 'Gamja Flower', serif;
     font-size: 2rem;
+    text-align: center;
   }
 }
 
@@ -47,11 +48,11 @@
 .forms-box {
   box-shadow: 10px 10px 20px $shadow;
   border-radius: 15px;
-  background: $forms-box-bg;
-  border: 3px solid $forms-box-border;
+  background: $box-bg;
+  border: 3px solid $box-border;
   padding: 2rem;
   .form-row:last-child {
-    text-align: center;
+    text-align: right;
   }
   form {
     * {
@@ -59,10 +60,6 @@
     }
     *:last-child {
       margin: 0;
-    }
-    input {
-      padding: 0.5em;
-      border-radius: 3px;
     }
   }
   form:first-child {

@@ -1,0 +1,15 @@
+.profile-header {
+  margin-top: 2rem;
+  font-family: 'Gamja Flower', serif;
+}
+
+.user-stats {
+  background: $box-bg;
+  border: 2px solid $box-border;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  h2 {
+    margin-top: 0;
+  }
+}
