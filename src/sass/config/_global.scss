@@ -38,11 +38,25 @@ li {
 
 input,
 select {
-  background-color: $white;
-  border: 1px solid rgba($silver-dark, 0.3);
+  background-color: $off-white;
+  border: 1px solid $shadow-light;
+  box-shadow: $shadow-inset;
   padding: 0.5rem;
   border-radius: 5px;
   width: 100%;
+  transition: $transition-default;
+  font-family: 'Roboto Mono', monospace;
+}
+select {
+  cursor: pointer;
+}
+input:hover,
+select:hover {
+  background-color: $white;
+}
+input:focus,
+select:focus {
+  background-color: $white;
 }
 input:active,
 select:active {

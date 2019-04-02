@@ -57,7 +57,7 @@ function addPost(data, type='message'){
     : "chatroom__post__avatar__circle avatar-icon";
   var circleContent = type === 'notice'
     ? '<b>%</b>'
-    : `<img class='' src='${data.icon}'></img>`;
+    : `<img class='' src='${data.avatar}'></img>`;
   avatarCircle.innerHTML = circleContent;
   avatarCircle.title = type === 'notice'
     ? 'Server Notice'

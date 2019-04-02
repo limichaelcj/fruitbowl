@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1.fruitbowl-header fruitbowl
+  img.page-logo(src=randomIcon)
   if user
     .user-dock
       span Logged in as: 
@@ -9,8 +10,8 @@ block content
   .chatroom
     .chatroom__header Chatroom
     .chatroom__info
+      span= "Users online: "
       b#user-count 0
-      span= " user(s) online"
     ul.chatroom__feed.chatroom--inset
     form.chatroom__form#chatroom-form(action='/chat/send' method='post')
       input.chatroom__form__input.chatroom--inset

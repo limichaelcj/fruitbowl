@@ -7,22 +7,36 @@ $color-sec-dark: $jade-dark;
 $color-sec-light: $jade-light;
 
 $shadow: rgba($black-light, 0.3);
+$shadow-light: rgba($silver-dark, 0.3);
+
+$shadow-inset: inset 2px 2px 5px $shadow-light;
+$shadow-inset-dark: inset 2px 2px 5px $shadow;
 
 $transition-default: 250ms;
-$transition-chat: 150ms;
+$transition-fast: 150ms;
 
 $bezier-bounce: cubic-bezier(.21,1.11,.6,1.15);
+
+$gradient-angle: -5deg;
 
 // globals
 $text: $black;
 $text-inverted: $white;
 
+
+// components
+$button-color: $mango;
+$button-light: $mango-light;
+$button-dark: $mango-dark;
+$button-bg: linear-gradient($gradient-angle, $mango, $mango-light);
+$button-hover-bg: linear-gradient($gradient-angle, $mango, $mango-light 70%, $off-white 100%);
+
 // home
-$box-bg: linear-gradient(-20deg, $mantis, $mantis-light);;
+$box-bg: linear-gradient($gradient-angle, $mantis, $mantis-light);;
 $box-border: rgba($mantis-dark, 0.2);
 
 // chatroom
-$chatroom-bg: rgba($sky-light, 0.5);
+$chatroom-bg: linear-gradient($gradient-angle, rgba($sky, 0.7), rgba($sky-light, 0.7));
 $chatroom-border: rgba($sky-dark, 0.2);
 $chatroom-inset-bg: $white;
 $chatroom-inset-border: rgba($black-light, 0.2);

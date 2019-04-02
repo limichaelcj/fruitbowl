@@ -35,7 +35,7 @@ module.exports = function(io) {
           io.emit('chat message', {
             name: user.username,
             message,
-            icon: `/assets/icons/${user.favorite_fruit}.svg`
+            avatar: `/assets/avatars/${user.favorite_fruit}.svg`
           });
         }
       );

@@ -1,9 +1,11 @@
 .button {
   box-sizing: border-box;
-  border-radius: 25px;
-  background-color: $mantis-light;
-  border: 2px solid $mantis-dark;
-  color: $mantis-dark;
+  border-radius: 15px;
+  background: $button-bg;
+  border: 2px solid rgba($button-dark, 0.3);
+  box-shadow: 0 1px 4px $shadow-light;
+  color: $button-dark;
+  font-weight: bold;
   padding: 0.6em 1.2em;
   display: inline-block;
   transition: $transition-default;
@@ -14,20 +16,22 @@
 }
 .button:focus,
 .button:hover {
-  color: $mantis-dark;
-  box-shadow: 5px 5px 10px $shadow;
-  border-color: rgba($mantis-dark, 0.5);
+  color: $button-dark;
+  box-shadow: 2px 4px 6px $shadow;
+  border-color: rgba($button-color, 0.3);
+  background: $button-hover-bg;
+  text-decoration: none;
 }
 .button:active {
-  box-shadow: none;
-  color: $white;
-  background-color: $mantis;
+  box-shadow: $shadow-inset-dark;
+  color: $button-light;
+  background: $button-bg;
   transform-origin: 50% 50%;
-  border-color: $white;
+  border-color: rgba($button-dark, 0.3);
 }
 
 .button--effect {
-  transition-duration: $transition-chat;
+  transition-duration: $transition-fast;
   transition-timing-function: $bezier-bounce;
 }
 .button--effect:hover {

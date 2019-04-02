@@ -4,14 +4,14 @@ block content
   img.page-logo(src='/assets/berries.svg')
   h1.profile-header #{user.username}'s profile
   .avatar-icon.avatar-icon--xl
-    img(src=`/assets/icons/${user.favorite_fruit}.svg`)
+    img(src=`/assets/avatars/${user.favorite_fruit}.svg`)
   .user-stats
     h2 User Data
     .user-stats__entry
       b Favorite fruit:
       span= user.favorite_fruit
     .user-stats__entry
-      b Messages submitted: 
+      b Messages sent: 
       span= user.messages_sent
     .user-stats__entry
       b Last login: 

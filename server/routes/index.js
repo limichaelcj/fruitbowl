@@ -5,6 +5,10 @@ const saltRounds = 10;
 
 const router = require('express').Router();
 
+const chooseFrom = function(arr){
+  return arr[Math.floor(Math.random()*arr.length)]
+}
+
 // middleware
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
@@ -20,8 +24,11 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/chat', ensureAuthenticated, (req,res)=>{
+  const fruits = ['apple', 'blueberries', 'grapes', 'kiwi', 'melon', 'pineapple', 'raspberry', 'tomato'];
+
   res.render('chat', {
-    user: req.user
+    user: req.user,
+    randomIcon: `/assets/icons/${chooseFrom(fruits)}.svg`
   });
 })
 

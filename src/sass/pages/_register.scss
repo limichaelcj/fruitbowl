@@ -1,0 +1,27 @@
+.forms-box {
+  box-shadow: 10px 10px 20px $shadow;
+  border-radius: 15px;
+  background: $box-bg;
+  border: 3px solid $box-border;
+  padding: 2rem 3rem;
+  .form-row:last-child {
+    text-align: right;
+  }
+  form {
+    * {
+      margin: 0.25rem;
+    }
+    *:last-child {
+      margin: 0;
+    }
+  }
+  form:first-child {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.form-header {
+  font-family: 'Gamja Flower', serif;
+  text-align: center;
+  font-size: 1.4rem;
+}
