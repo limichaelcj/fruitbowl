@@ -23,9 +23,8 @@ router.get('/', (req,res)=>{
   });
 })
 
-router.get('/chat', (req,res)=>{
+router.get('/chat', ensureAuthenticated, (req,res)=>{
   const fruits = ['apple', 'blueberries', 'grapes', 'kiwi', 'melon', 'pineapple', 'raspberry', 'tomato'];
-
   res.render('chat', {
     user: req.user,
     randomIcon: `/assets/icons/${chooseFrom(fruits)}.svg`
@@ -66,12 +65,12 @@ router.post('/register', (req, res, next)=>{
   User.findOne({ username: req.body.username }, (err, user) => {
     if (err) next(err);
     // username already exists
-    else if (user) next();
+    else if (user) res.redirect('/?registrationFail=3');
     else {
       bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
         if (err) next(err);
         var timestamp = new Date();
-        User.create({
+        User.crepate({
           username: req.body.username,
           password: hash,
           favorite_fruit: req.body.fruit,
@@ -87,7 +86,7 @@ router.post('/register', (req, res, next)=>{
     }
   })
 }, passport.authenticate('local', {
-  failureRedirect: `/?registrationFail=3`
+  failureRedirect: `/?registrationFail=4`
 }), (req, res, next) => {
   res.redirect(`/profile/${req.body.username}`);
 });

@@ -1,20 +1,24 @@
 .user-dock {
   margin: 0 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > * {
+    margin-right: 0.5rem;
+  }
+  & > *:last-child {
+    margin: 0;
+  }
 }
-.chat-profile-link {
+.chat-profile-name {
   background-color: $white;
   padding: 0.4em 0.8em;
   margin-right: 1em;
   box-shadow: 2px 2px 5px $shadow;
   border-radius: 8px;
   transition: $transition-fast;
+  color: $mantis;
 }
-
 .chat-profile-link:hover {
   box-shadow: 5px 5px 10px $shadow;
-}
-
-.chat-profile-link:active {
-  box-shadow: none;
-  background-color: $white-dark;
 }

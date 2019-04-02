@@ -45,13 +45,12 @@ $chatroom-bg: linear-gradient($gradient-angle, rgba($sky, 0.7), rgba($sky-light,
 $chatroom-border: rgba($sky-dark, 0.2);
 $chatroom-inset-bg: $white;
 $chatroom-inset-border: rgba($black-light, 0.2);
-$chat-message-bg: $azure;
+$chat-message-bg: $cerulean;
 $chat-message-text: $white;
-$chat-message-border: $azure-dark;
-$chat-message-avatar-bg: $azure-light;
+$chat-message-border: $cerulean-dark;
 $chat-notice-text: $mantis-dark;
 $chat-notice-bg: $mantis-light;
 $chat-notice-border: $mantis-dark;
 $chat-notice-avatar-bg: $mantis-light;
 $chat-avatar-color: $white;
-$chat-send-bg: $azure;
+$chat-send-bg: $cerulean-dark;

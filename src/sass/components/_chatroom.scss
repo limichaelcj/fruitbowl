@@ -95,6 +95,14 @@
           text-shadow: -1px -1px 4px $shadow;
           user-select: none;
           cursor: pointer;
+          transition: $transition-default;
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 4px 8px $shadow;
+          }
+          &:active {
+            box-shadow: none;
+          }
           b {
             color: $chat-avatar-color;
           }

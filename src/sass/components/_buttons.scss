@@ -1,6 +1,7 @@
 .button {
   box-sizing: border-box;
   border-radius: 15px;
+  border-width: 0;
   box-shadow: 0 1px 4px $shadow-light;
   font-weight: bold;
   padding: 0.6em 1.2em;
@@ -22,7 +23,7 @@
 }
 .button--primary {
   background: $button-bg;
-  border: 2px solid rgba($button-dark, 0.3);
+  border-color: rgba($button-dark, 0.3);
   color: $button-dark;
   &:hover {
     color: $button-dark;

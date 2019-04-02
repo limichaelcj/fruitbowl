@@ -6,7 +6,8 @@ block content
   if user
     .user-dock
       span Logged in as: 
-      a.chat-profile-link(href='/profile' title='Go to profile page')= user.username
+      span.chat-profile-name= user.username
+      a.button.button--primary.font-sm(href='/profile') Profile
       a.button.button--secondary.font-sm(href='/logout') Logout
   .chatroom
     .chatroom__header Chatroom

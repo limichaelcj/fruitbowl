@@ -63,6 +63,11 @@ function addPost(data, type='message'){
     ? 'Server Notice'
     : data.name;
     avatar.append(avatarCircle);
+  if (type === 'message') {
+    avatarCircle.onclick = () => {
+      window.open(`/profile/${data.name}`, '_blank');
+    }
+  }
   // append to parent elements
   post.append(avatar);
   feed.append(post);
