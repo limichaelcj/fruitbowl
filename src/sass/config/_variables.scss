@@ -22,16 +22,17 @@ $box-bg: linear-gradient(-20deg, $mantis, $mantis-light);;
 $box-border: rgba($mantis-dark, 0.2);
 
 // chatroom
-$chatroom-bg: rgba($sky-light, 0.3);
+$chatroom-bg: rgba($sky-light, 0.5);
 $chatroom-border: rgba($sky-dark, 0.2);
 $chatroom-inset-bg: $white;
 $chatroom-inset-border: rgba($black-light, 0.2);
-$chat-message-bg: $blue;
+$chat-message-bg: $azure;
 $chat-message-text: $white;
-$chat-message-border: $blue-dark;
-$chat-message-avatar-bg: $blue-light;
+$chat-message-border: $azure-dark;
+$chat-message-avatar-bg: $azure-light;
 $chat-notice-text: $mantis-dark;
 $chat-notice-bg: $mantis-light;
 $chat-notice-border: $mantis-dark;
 $chat-notice-avatar-bg: $mantis-light;
 $chat-avatar-color: $white;
+$chat-send-bg: $azure;

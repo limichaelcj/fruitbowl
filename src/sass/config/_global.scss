@@ -10,14 +10,14 @@ body {
 
 a {
   text-decoration: none;
-  color: $sunglow;
+  color: $mango;
   cursor: pointer;
 }
 a:hover {
   text-decoration: underline;
 }
 a:active {
-  color: $sunglow-light;
+  color: $mango-light;
 }
 a:visited {
 
@@ -36,15 +36,19 @@ li {
   margin: 0;
 }
 
-input {
+input,
+select {
   background-color: $white;
   border: 1px solid rgba($silver-dark, 0.3);
   padding: 0.5rem;
   border-radius: 5px;
+  width: 100%;
 }
-input:active {
+input:active,
+select:active {
   outline: none;
 }
-input:visited {
+input:visited,
+select:visited {
   outline: none;
 }

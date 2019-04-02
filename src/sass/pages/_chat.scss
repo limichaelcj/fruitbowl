@@ -1,0 +1,16 @@
+.chat-profile-link {
+  background-color: $white;
+  padding: 0.4em 0.8em;
+  box-shadow: 2px 2px 5px $shadow;
+  border-radius: 8px;
+  transition: $transition-chat;
+}
+
+.chat-profile-link:hover {
+  box-shadow: 5px 5px 10px $shadow;
+}
+
+.chat-profile-link:active {
+  box-shadow: none;
+  background-color: $off-white;
+}

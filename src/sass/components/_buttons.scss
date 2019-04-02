@@ -9,13 +9,15 @@
   transition: $transition-default;
   cursor: pointer;
 }
-
+.button:focus {
+  outline: none;
+}
+.button:focus,
 .button:hover {
   color: $mantis-dark;
   box-shadow: 5px 5px 10px $shadow;
   border-color: rgba($mantis-dark, 0.5);
 }
-
 .button:active {
   box-shadow: none;
   color: $white;

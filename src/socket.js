@@ -50,17 +50,21 @@ function addPost(data, type='message'){
 
   var avatar = document.createElement('div');
   avatar.className = "chatroom__post__avatar";
-  // if (type === 'message'){
-    var avatarCircle = document.createElement('div');
-    avatarCircle.className = "chatroom__post__avatar__circle";
-    var avatarImg = type === 'message'
-    ? data.name[0] : '%';
-    avatarCircle.innerHTML = `<b>${avatarImg}</b>`;
-    avatarCircle.title = type === 'message' ? data.name : 'Server Notice';
+  // circle = server or user avatar
+  var avatarCircle = document.createElement('div');
+  avatarCircle.className = type === 'notice'
+    ? "chatroom__post__avatar__circle"
+    : "chatroom__post__avatar__circle avatar-icon";
+  var circleContent = type === 'notice'
+    ? '<b>%</b>'
+    : `<img class='' src='${data.icon}'></img>`;
+  avatarCircle.innerHTML = circleContent;
+  avatarCircle.title = type === 'notice'
+    ? 'Server Notice'
+    : data.name;
     avatar.append(avatarCircle);
-  // }
+  // append to parent elements
   post.append(avatar);
-
   feed.append(post);
 }
 function scrollToBottom(elem){

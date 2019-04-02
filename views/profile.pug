@@ -1,12 +1,18 @@
 extends layout
 
 block content
-  h1.profile-header #{user.username}'s Profile
+  img.page-logo(src='/assets/berries.svg')
+  h1.profile-header #{user.username}'s profile
+  .avatar-icon.avatar-icon--xl
+    img(src=`/assets/icons/${user.favorite_fruit}.svg`)
   .user-stats
-    h2 Statistics
+    h2 User Data
+    .user-stats__entry
+      b Favorite fruit:
+      span= user.favorite_fruit
     .user-stats__entry
       b Messages submitted: 
-      span= user.total_messages
+      span= user.messages_sent
     .user-stats__entry
       b Last login: 
       span= user.last_login.toDateString()

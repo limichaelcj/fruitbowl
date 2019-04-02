@@ -1,27 +1,15 @@
 extends layout
 
 block content
-  .fruitbowl-header
-    .fruitbowl-header__skin
-    .fruitbowl-header__shape
-    h1.fruitbowl-header__title fruitbowl
+  h1.fruitbowl-header fruitbowl
+  img.page-logo(src='/assets/watermelon.png')
+  if registrationFail
+    .notice 
+      i.fas.fa-exclamation-circle
+      span Oops! That username is taken. Please try another one.
+  if loginFail
+    .notice
+      i.fas.fa-exclamation-circle
+      span Incorrect username or password.
   h2.fruitbowl-subheader join the conversation
-  .forms-box
-    form(id='register' action='/register' method='post')
-      .form-row
-        .form-header Register
-      .form-row
-        input(name='username' type='text' placeholder='username' required)
-      .form-row
-        input(name='password' type='password' placeholder='password' required)
-      .form-row
-        input.button(type='submit' value='Submit')
-    form(id='login' action='/login' method='post')
-      .form-row
-        .form-header Login
-      .form-row
-        input(name='username' type='text' placeholder='username' required)
-      .form-row
-        input(name='password' type='password' placeholder='password' required)
-      .form-row
-        input.button(type='submit' value='Submit')
+  include _register

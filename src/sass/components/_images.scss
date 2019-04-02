@@ -1,0 +1,33 @@
+.page-logo {
+  height: 4rem;
+}
+
+.avatar-icon {
+  box-sizing: border-box;
+  box-shadow: 5px 5px 10px $shadow;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    transform-origin: 50% 50%;
+    transform: scale(1.05);
+  }
+}
+
+.avatar-icon--sm {
+  height: 1rem;
+  width: 1rem;
+}
+.avatar-icon--md {
+  height: 2rem;
+  width: 2rem;
+}
+.avatar-icon--lg {
+  height: 3rem;
+  width: 3rem;
+}
+.avatar-icon--xl {
+  height: 4rem;
+  width: 4rem;
+}

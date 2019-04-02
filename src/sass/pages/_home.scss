@@ -1,48 +1,16 @@
 .fruitbowl-header {
-  position: relative;
-
-  .fruitbowl-header__skin {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 8rem;
-    width: 8rem;
-    border-radius: 50%;
-    background: repeating-linear-gradient(-20deg, $mantis-dark, $mantis-light 20%, $mantis-dark 40%);
-    transform: translate(0, -50%) scaleY(1.3) scaleX(2);
-  }
-  .fruitbowl-header__shape {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    height: 8rem;
-    width: 8rem;
-    border-radius: 50%;
-    position: absolute;
-    background: linear-gradient(-20deg, $vermilion, $vermilion-light);
-    transform: translate(0, -52%) scaleY(1.2) scaleX(1.95);
-  }
-
-  .fruitbowl-header__title {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 1rem;
-    color: $text-inverted;
-    margin: 0;
-    padding: 0;
-    font-family: 'Gamja Flower', serif;
-    font-size: 2rem;
-    text-align: center;
-  }
+  color: $text;
+  font-family: 'Gamja Flower', serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
 }
 
 .fruitbowl-subheader {
   font-family: 'Gamja Flower', serif;
   font-size: 1.5rem;
   color: $text;
+  margin: 0 0 1rem;
 }
 
 .forms-box {

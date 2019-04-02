@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  h1 Fruitbowl
+  h1.fruitbowl-header fruitbowl
   if user
     .user-dock
       span Logged in as: 
-      a(href='/profile')= user.username
+      a.chat-profile-link(href='/profile' title='Go to profile page')= user.username
   .chatroom
     .chatroom__header Chatroom
     .chatroom__info

@@ -118,7 +118,7 @@
         text-align: left;
       }
       .chatroom__post__avatar__circle {
-        background-color: $chat-message-avatar-bg;
+        background-color: transparent;
       }
     }
   }
@@ -145,7 +145,7 @@
         margin: auto;
         padding: auto;
         color: $white;
-        background-color: $blue;
+        background-color: $chat-send-bg;
         text-align: center;
         line-height: 2em;
         cursor: pointer;

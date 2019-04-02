@@ -1,0 +1,16 @@
+.notice {
+  margin: 1em;
+  padding: 1em 1.5em;
+  background-color: rgba($white, 0.7);
+  border-radius: 10px;
+  border: 2px solid rgba($sunglow, 0.3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  i {
+    font-size: 1.5em;
+    color: $sunglow;
+    margin-right: 1em;
+    text-shadow: 2px 2px 5px rgba($silver, 0.3);
+  }
+}

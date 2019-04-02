@@ -13,7 +13,10 @@ function ensureAuthenticated(req, res, next) {
 }
 
 router.get('/', (req,res)=>{
-  res.render('index');
+  res.render('index', {
+    registrationFail: req.query.registrationFail,
+    loginFail: req.query.loginFail
+  });
 })
 
 router.get('/chat', ensureAuthenticated, (req,res)=>{
@@ -29,7 +32,7 @@ router.get('/profile', ensureAuthenticated, (req,res)=>{
 })
 
 router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/',
+  failureRedirect: '/?loginFail=1',
   successRedirect: '/profile'
 }));
 
@@ -37,7 +40,7 @@ router.post('/register', (req, res, next)=>{
   User.findOne({ username: req.body.username }, (err, user) => {
     if (err) next(err);
     // username already exists
-    else if (user) res.render('error', {error:{status:500,message:'Username already exists'}});
+    else if (user) next();
     else {
       bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
         if (err) next(err);
@@ -45,10 +48,11 @@ router.post('/register', (req, res, next)=>{
         User.create({
           username: req.body.username,
           password: hash,
+          favorite_fruit: req.body.fruit,
           _created_on: timestamp,
           last_login: timestamp,
           login_count: 1,
-          total_messages: 0
+          messages_sent: 0
         }, (err, doc) => {
           if (err) next(err);
           next(null, doc)
@@ -57,7 +61,7 @@ router.post('/register', (req, res, next)=>{
     }
   })
 }, passport.authenticate('local', {
-  failureRedirect: '/'
+  failureRedirect: '/?registrationFail=1'
 }), (req, res, next) => {
   res.redirect('/profile');
 });

@@ -1,15 +1,32 @@
 .profile-header {
-  margin-top: 2rem;
+  margin: 2rem 0 1rem;
   font-family: 'Gamja Flower', serif;
 }
 
 .user-stats {
   background: $box-bg;
   border: 2px solid $box-border;
+  box-shadow: 10px 10px 20px $shadow;
   padding: 2rem;
   border-radius: 15px;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   h2 {
+    font-family: 'Gamja Flower', serif;
     margin-top: 0;
+    text-align: center;
+  }
+}
+
+.user-stats__entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2em;
+  margin-bottom: 0.5em;
+  *:first-child {
+    text-align: right;
+  }
+  *:last-child {
+    text-align: left;
   }
 }
