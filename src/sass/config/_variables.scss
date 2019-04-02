@@ -25,11 +25,16 @@ $text-inverted: $white;
 
 
 // components
-$button-color: $mango;
-$button-light: $mango-light;
-$button-dark: $mango-dark;
-$button-bg: linear-gradient($gradient-angle, $mango, $mango-light);
-$button-hover-bg: linear-gradient($gradient-angle, $mango, $mango-light 70%, $off-white 100%);
+$button-color: $cerulean;
+$button-light: $cerulean-light;
+$button-dark: $cerulean-dark;
+$button-bg: linear-gradient($gradient-angle, $cerulean, $cerulean-light);
+$button-hover-bg: linear-gradient($gradient-angle, $cerulean, $cerulean-light 70%, $off-white 100%);
+$button-sec-color: $mango;
+$button-sec-light: $mango-light;
+$button-sec-dark: $mango-dark;
+$button-sec-bg: linear-gradient($gradient-angle, $mango, $mango-light);
+$button-sec-hover-bg: linear-gradient($gradient-angle, $mango, $mango-light 70%, $off-white 100%);
 
 // home
 $box-bg: linear-gradient($gradient-angle, $mantis, $mantis-light);;

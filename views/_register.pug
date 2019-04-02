@@ -3,7 +3,7 @@
     .form-row
       .form-header Register
     .form-row
-      input(name='username' type='text' placeholder='username' required)
+      input(name='username' type='text' placeholder='username' pattern='^[^ ]+$' required)
     .form-row
       input(name='password' type='password' placeholder='password' required)
     .form-row
@@ -20,7 +20,7 @@
         option(value='strawberry') strawberry
         option(value='watermelon') watermelon
     .form-row
-      input.button(type='submit' value='Submit')
+      input.button.button--secondary(type='submit' value='Submit')
   form(id='login' action='/login' method='post')
     .form-row
       .form-header Login
@@ -29,4 +29,4 @@
     .form-row
       input(name='password' type='password' placeholder='password' required)
     .form-row
-      input.button(type='submit' value='Submit')
+      input.button.button--secondary(type='submit' value='Submit')

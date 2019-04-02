@@ -3,14 +3,21 @@ extends layout
 block content
   h1.fruitbowl-header fruitbowl
   img.page-logo(src='/assets/watermelon.png')
-  if registrationFail
+  if registrationFail || loginFail || logout
     .notice 
       i.fas.fa-exclamation-circle
-      span Oops! That username is taken. Please try another one.
-  else if loginFail
-    .notice
-      i.fas.fa-exclamation-circle
-      span Incorrect username or password.
+      if (registrationFail == 1)
+        span Username can only consist of letters, numbers, hyphens (-), and underscores (_)
+      else if (registrationFail == 2)
+        span Password must be 8 characters or longer.
+      else if (registrationFail == 3) 
+        span Sorry, that username is already taken
+      else if loginFail
+        span Incorrect login information.
+      else if logout
+        span Successfully logged out.
+      else
+        span Oops! Something went wrong.
   else
     h2.fruitbowl-subheader join the conversation
   include _register

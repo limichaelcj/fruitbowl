@@ -75,33 +75,46 @@ select:visited {
 .button {
   box-sizing: border-box;
   border-radius: 15px;
-  background: linear-gradient(-5deg, #ff8243, #ffb371);
-  border: 2px solid rgba(198, 83, 20, 0.3);
   box-shadow: 0 1px 4px rgba(144, 144, 144, 0.3);
-  color: #c65314;
   font-weight: bold;
   padding: 0.6em 1.2em;
   display: inline-block;
   transition: 250ms;
   cursor: pointer; }
+  .button:focus {
+    outline: none; }
+  .button:focus, .button:hover {
+    box-shadow: 2px 4px 6px rgba(72, 72, 72, 0.3);
+    text-decoration: none; }
+  .button:active {
+    box-shadow: inset 2px 2px 5px rgba(72, 72, 72, 0.3);
+    transform-origin: 50% 50%; }
 
-.button:focus {
-  outline: none; }
+.button--primary {
+  background: linear-gradient(-5deg, #03A9F4, #67daff);
+  border: 2px solid rgba(0, 122, 193, 0.3);
+  color: #007ac1; }
+  .button--primary:hover {
+    color: #007ac1;
+    border-color: rgba(3, 169, 244, 0.3);
+    background: linear-gradient(-5deg, #03A9F4, #67daff 70%, #eaeaea 100%); }
+  .button--primary:active {
+    color: #67daff;
+    background: linear-gradient(-5deg, #03A9F4, #67daff);
+    border-color: rgba(0, 122, 193, 0.3); }
 
-.button:focus,
-.button:hover {
-  color: #c65314;
-  box-shadow: 2px 4px 6px rgba(72, 72, 72, 0.3);
-  border-color: rgba(255, 130, 67, 0.3);
-  background: linear-gradient(-5deg, #ff8243, #ffb371 70%, #eaeaea 100%);
-  text-decoration: none; }
-
-.button:active {
-  box-shadow: inset 2px 2px 5px rgba(72, 72, 72, 0.3);
-  color: #ffb371;
+.button--secondary {
   background: linear-gradient(-5deg, #ff8243, #ffb371);
-  transform-origin: 50% 50%;
-  border-color: rgba(198, 83, 20, 0.3); }
+  border-color: rgba(255, 130, 67, 0.3);
+  color: #c65314; }
+  .button--secondary:hover {
+    color: #c65314;
+    border-color: rgba(255, 130, 67, 0.3);
+    background: linear-gradient(-5deg, #ff8243, #ffb371 70%, #eaeaea 100%); }
+  .button--secondary:active {
+    color: #ffb371;
+    background: linear-gradient(-5deg, #ff8243, #ffb371);
+    border-color: rgba(198, 83, 20, 0.3); }
 
 .button--effect {
   transition-duration: 150ms;
@@ -305,6 +318,9 @@ select:visited {
 .margin-bottom {
   margin-bottom: 1rem; }
 
+.margin-bottom-2x {
+  margin-bottom: 2rem; }
+
 .flex-center {
   box-sizing: border-box;
   display: flex;
@@ -314,6 +330,9 @@ select:visited {
   align-items: center;
   justify-content: center;
   height: 100%; }
+
+.font-sm {
+  font-size: 0.6rem; }
 
 .clickable {
   cursor: pointer; }
@@ -378,9 +397,20 @@ select:visited {
   .user-stats__entry *:last-child {
     text-align: left; }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .links > * {
+    margin-bottom: 1rem; }
+
+.user-dock {
+  margin: 0 0 1rem; }
+
 .chat-profile-link {
   background-color: #fafafa;
   padding: 0.4em 0.8em;
+  margin-right: 1em;
   box-shadow: 2px 2px 5px rgba(72, 72, 72, 0.3);
   border-radius: 8px;
   transition: 150ms; }

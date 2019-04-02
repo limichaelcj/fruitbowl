@@ -1,6 +1,10 @@
+.user-dock {
+  margin: 0 0 1rem;
+}
 .chat-profile-link {
   background-color: $white;
   padding: 0.4em 0.8em;
+  margin-right: 1em;
   box-shadow: 2px 2px 5px $shadow;
   border-radius: 8px;
   transition: $transition-fast;

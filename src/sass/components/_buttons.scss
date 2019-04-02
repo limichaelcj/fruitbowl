@@ -1,33 +1,54 @@
 .button {
   box-sizing: border-box;
   border-radius: 15px;
-  background: $button-bg;
-  border: 2px solid rgba($button-dark, 0.3);
   box-shadow: 0 1px 4px $shadow-light;
-  color: $button-dark;
   font-weight: bold;
   padding: 0.6em 1.2em;
   display: inline-block;
   transition: $transition-default;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:focus,
+  &:hover {
+    box-shadow: 2px 4px 6px $shadow;
+    text-decoration: none;
+  }
+  &:active {
+    box-shadow: $shadow-inset-dark;
+    transform-origin: 50% 50%;
+  }
 }
-.button:focus {
-  outline: none;
-}
-.button:focus,
-.button:hover {
-  color: $button-dark;
-  box-shadow: 2px 4px 6px $shadow;
-  border-color: rgba($button-color, 0.3);
-  background: $button-hover-bg;
-  text-decoration: none;
-}
-.button:active {
-  box-shadow: $shadow-inset-dark;
-  color: $button-light;
+.button--primary {
   background: $button-bg;
-  transform-origin: 50% 50%;
-  border-color: rgba($button-dark, 0.3);
+  border: 2px solid rgba($button-dark, 0.3);
+  color: $button-dark;
+  &:hover {
+    color: $button-dark;
+    border-color: rgba($button-color, 0.3);
+    background: $button-hover-bg;
+  }
+  &:active {
+    color: $button-light;
+    background: $button-bg;
+    border-color: rgba($button-dark, 0.3);
+  }
+}
+.button--secondary {
+  background: $button-sec-bg;
+  border-color: rgba($button-sec-color, 0.3);
+  color: $button-sec-dark;
+  &:hover {
+    color: $button-sec-dark;
+    border-color: rgba($button-sec-color, 0.3);
+    background: $button-sec-hover-bg;
+  }
+  &:active {
+    color: $button-sec-light;
+    background: $button-sec-bg;
+    border-color: rgba($button-sec-dark, 0.3);
+  }
 }
 
 .button--effect {

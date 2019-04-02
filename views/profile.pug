@@ -2,19 +2,27 @@ extends layout
 
 block content
   img.page-logo(src='/assets/berries.svg')
-  h1.profile-header #{user.username}'s profile
+  h1.profile-header #{profile.username}'s profile
   .avatar-icon.avatar-icon--xl
-    img(src=`/assets/avatars/${user.favorite_fruit}.svg`)
+    img(src=`/assets/avatars/${profile.favorite_fruit}.svg`)
   .user-stats
     h2 User Data
     .user-stats__entry
       b Favorite fruit:
-      span= user.favorite_fruit
+      span= profile.favorite_fruit
     .user-stats__entry
       b Messages sent: 
-      span= user.messages_sent
+      span= profile.messages_sent
     .user-stats__entry
       b Last login: 
-      span= user.last_login.toDateString()
+      span= profile.last_login.toDateString()
   .links
-    a.button(href='/chat') Go to chatroom 
+    if user
+      if user.username != profile.username
+        a.button.button--primary(href='/profile') View my profile
+      a.button.button--primary(href='/chat') Enter chatroom 
+      if user.username = profile.username
+        a.button.button--secondary(href='/logout') Logout
+    else
+      a.button.button--primary(href='/') Sign Up / Login
+    

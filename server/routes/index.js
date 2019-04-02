@@ -23,7 +23,7 @@ router.get('/', (req,res)=>{
   });
 })
 
-router.get('/chat', ensureAuthenticated, (req,res)=>{
+router.get('/chat', (req,res)=>{
   const fruits = ['apple', 'blueberries', 'grapes', 'kiwi', 'melon', 'pineapple', 'raspberry', 'tomato'];
 
   res.render('chat', {
@@ -32,18 +32,37 @@ router.get('/chat', ensureAuthenticated, (req,res)=>{
   });
 })
 
-router.get('/profile', ensureAuthenticated, (req,res)=>{
-  res.render('profile', {
-    user: req.user
-  });
-})
+router.get('/profile/:username', (req,res)=>{
+  User.findOne({username: req.params.username}, (err, doc) => {
+    if (err) next(err);
+    req.isAuthenticated();
+    res.render('profile', {
+      profile: doc,
+      user: req.user || null
+    })
+  })
+});
+
+router.get('/profile', ensureAuthenticated, (req,res) => {
+  res.redirect(`/profile/${req.user.username}`);
+});
 
 router.post('/login', passport.authenticate('local', {
   failureRedirect: '/?loginFail=1',
   successRedirect: '/profile'
 }));
 
+router.get('/logout', (req,res) => {
+  req.logout();
+  res.redirect('/?logout=1');
+})
+
 router.post('/register', (req, res, next)=>{
+  req.body.username = req.body.username.trim();
+  // 2nd level validation (1st=html, 3rd=mongoose)
+  if (/[^a-zA-Z0-9\-\_]/g.test(req.body.username)) res.redirect('/?registrationFail=1');
+  if (req.body.password.length < 8) res.redirect('/?registrationFail=2');
+
   User.findOne({ username: req.body.username }, (err, user) => {
     if (err) next(err);
     // username already exists
@@ -68,9 +87,9 @@ router.post('/register', (req, res, next)=>{
     }
   })
 }, passport.authenticate('local', {
-  failureRedirect: '/?registrationFail=1'
+  failureRedirect: `/?registrationFail=3`
 }), (req, res, next) => {
-  res.redirect('/profile');
+  res.redirect(`/profile/${req.body.username}`);
 });
 
 module.exports = router;
