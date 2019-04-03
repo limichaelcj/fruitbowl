@@ -70,7 +70,7 @@ router.post('/register', (req, res, next)=>{
       bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
         if (err) next(err);
         var timestamp = new Date();
-        User.crepate({
+        User.create({
           username: req.body.username,
           password: hash,
           favorite_fruit: req.body.fruit,

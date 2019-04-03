@@ -2,24 +2,28 @@ const User = require(process.cwd() + '/models/User')
 
 module.exports = function(io) {
   // socket state
-  var userCount = 0;
+  var allUsers = [];
 
   io.on('connection', socket => {
     console.log(`Connection to user '${socket.request.user.username}'`);
-    userCount++;
+    allUsers.push({
+      name: socket.request.user.username,
+      avatar: socket.request.user.favorite_fruit
+    });
     io.emit('user', {
       name: socket.request.user.username,
-      userCount,
-      connected: true
+      connected: true,
+      allUsers
     });
 
     // configure socket response behavior
-    socket.on('disconnect', ()=>{
-      userCount--;
+    socket.on('disconnect', () => {
+      var index = allUsers.findIndex(user => user.name == socket.request.user.username);
+      allUsers.splice(index, 1);
       io.emit('user', {
         name: socket.request.user.username,
-        userCount,
-        connected: false
+        connected: false,
+        allUsers
       });
     });
 

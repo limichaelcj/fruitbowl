@@ -2,11 +2,11 @@ extends layout
 
 block content
   img.page-logo(src='/assets/berries.svg')
-  h1.profile-header #{profile.username}'s profile
+  h1.profile-header= profile.username
   .avatar-icon.avatar-icon--xl
     img(src=`/assets/avatars/${profile.favorite_fruit}.svg`)
   .user-stats
-    h2 User Data
+    h2 Profile
     .user-stats__entry
       b Favorite fruit:
       span= profile.favorite_fruit

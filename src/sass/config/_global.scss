@@ -6,6 +6,8 @@ body {
   font-size: 16px;
   background-image: url('/assets/bg.jpg');
   background-repeat: repeat;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a {
