@@ -1,2 +1,0 @@
-- add notification to browser upon new message
-- do not auto-scroll to newest if feed window is not at bottom

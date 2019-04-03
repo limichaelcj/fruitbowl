@@ -8,13 +8,13 @@ block content
   .user-stats
     h2 Profile
     .user-stats__entry
-      b Favorite fruit:
+      strong Favorite fruit:
       span= profile.favorite_fruit
     .user-stats__entry
-      b Messages sent: 
+      strong Messages sent: 
       span= profile.messages_sent
     .user-stats__entry
-      b Last login: 
+      strong Last login: 
       span= profile.last_login.toDateString()
   .links
     if user
