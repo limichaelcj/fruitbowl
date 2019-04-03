@@ -5,7 +5,8 @@ module.exports = function(io) {
   var allUsers = [];
 
   io.on('connection', socket => {
-    console.log(`Connection to user '${socket.request.user.username}'`);
+    socket.user = socket.request.user;
+    console.log(`Connection to user '${socket.user.username}'`);
     allUsers.push({
       name: socket.request.user.username,
       avatar: socket.request.user.favorite_fruit

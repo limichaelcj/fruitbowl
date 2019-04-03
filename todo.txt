@@ -1,3 +1,2 @@
-1) allow profile to be viewed by anyone via route '/profile/:user'
-2) add page logo to chatroom
-3) chatroom: users online shows all the avatars of users in the room.
+- add notification to browser upon new message
+- do not auto-scroll to newest if feed window is not at bottom

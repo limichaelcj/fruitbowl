@@ -6,7 +6,7 @@ block content
   if user
     .user-dock
       span Logged in as: 
-      span.chat-profile-name= user.username
+      span#socket-user.chat-profile-name= user.username
       a.button.button--primary.font-sm(href='/profile') Profile
       a.button.button--secondary.font-sm(href='/logout') Logout
   .chatroom

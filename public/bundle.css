@@ -172,7 +172,8 @@ select:visited {
   box-sizing: border-box;
   background: linear-gradient(-5deg, rgba(126, 192, 238, 0.7), rgba(178, 243, 255, 0.7));
   border: 2px solid rgba(74, 144, 187, 0.2);
-  border-radius: 25px; }
+  border-radius: 25px;
+  font-size: 0.9rem; }
   .chatroom * {
     box-sizing: border-box; }
   .chatroom > * {
@@ -296,7 +297,7 @@ select:visited {
       text-shadow: inset -1px -1px 4px rgba(72, 72, 72, 0.3); }
     .chatroom .chatroom__feed .chatroom__post--notice--joined .chatroom__post__text {
       background-color: #bef67a;
-      border: 2px solid rgba(90, 146, 22, 0.2);
+      border: 2px solid rgba(90, 146, 22, 0.4);
       color: #5a9216; }
     .chatroom .chatroom__feed .chatroom__post--notice--joined .chatroom__post__avatar__circle {
       background-color: #bef67a; }
@@ -307,11 +308,15 @@ select:visited {
     .chatroom .chatroom__feed .chatroom__post--notice--left .chatroom__post__avatar__circle {
       background-color: #c1d5e0; }
     .chatroom .chatroom__feed .chatroom__post--message .chatroom__post__text {
-      background-color: #03A9F4;
-      border: 2px solid rgba(0, 122, 193, 0.2);
       border-radius: 25px;
+      text-align: left;
+      border: 2px solid rgba(0, 122, 193, 0.4); }
+    .chatroom .chatroom__feed .chatroom__post--message .chatroom__post__text--self {
       color: #fafafa;
-      text-align: left; }
+      background-color: #03A9F4; }
+    .chatroom .chatroom__feed .chatroom__post--message .chatroom__post__text--other {
+      color: #03A9F4;
+      background-color: #fafafa; }
     .chatroom .chatroom__feed .chatroom__post--message .chatroom__post__avatar__circle {
       background-color: transparent; }
   .chatroom .chatroom__form {

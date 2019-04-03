@@ -23,7 +23,6 @@ $gradient-angle: -5deg;
 $text: $black;
 $text-inverted: $white;
 
-
 // components
 $button-color: $cerulean;
 $button-light: $cerulean-light;
@@ -45,12 +44,14 @@ $chatroom-bg: linear-gradient($gradient-angle, rgba($sky, 0.7), rgba($sky-light,
 $chatroom-border: rgba($sky-dark, 0.2);
 $chatroom-inset-bg: $white;
 $chatroom-inset-border: rgba($black-light, 0.2);
-$chat-message-bg: $cerulean;
-$chat-message-text: $white;
-$chat-message-border: $cerulean-dark;
+$chat-message-bg-self: $cerulean;
+$chat-message-text-self: $white;
+$chat-message-bg-other: $white;
+$chat-message-text-other: $cerulean;
+$chat-message-border: rgba($cerulean-dark, 0.4);
 $chat-notice-joined-text: $mantis-dark;
 $chat-notice-joined-bg: $mantis-light;
-$chat-notice-joined-border: $mantis-dark;
+$chat-notice-joined-border: rgba($mantis-dark, 0.4);
 $chat-notice-joined-avatar: $mantis-light;
 $chat-notice-left-text: $steel-dark;
 $chat-notice-left-bg: $steel-light;

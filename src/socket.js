@@ -65,18 +65,25 @@ function start(){
 
 function addPost(data, type='message'){
   var feed = document.querySelector('.chatroom__feed');
+  // additional classes if type=notice
   var noticeClass = type === 'message'
-    ? ''
-    : data.includes('join')
-      ? ' chatroom__post--notice--joined'
-      : ' chatroom__post--notice--left';
+  ? ''
+  : data.includes('join')
+  ? ' chatroom__post--notice--joined'
+  : ' chatroom__post--notice--left';
   var className = `chatroom__post chatroom__post--${type}${noticeClass}`;
 
   var post = document.createElement('li');
   post.className = className;
 
   var text = document.createElement('div');
-  text.className = "chatroom__post__text";
+  // additional classes if type=message
+  var messageClass = type === 'notice'
+  ? ''
+  : data.name == document.getElementById('socket-user').innerHTML.trim()
+  ? ' chatroom__post__text--self'
+  : ' chatroom__post__text--other';
+  text.className = `chatroom__post__text${messageClass}`;
   text.innerHTML = type === 'message' ? data.message : data;
   post.append(text);
 
@@ -85,17 +92,17 @@ function addPost(data, type='message'){
   // circle = server or user avatar
   var avatarCircle = document.createElement('div');
   avatarCircle.className = type === 'message'
-    ? "chatroom__post__avatar__circle avatar-icon"
-    : "chatroom__post__avatar__circle";
+  ? "chatroom__post__avatar__circle avatar-icon"
+  : "chatroom__post__avatar__circle";
   var circleContent = type === 'message'
-    ? `<img class='' src='${data.avatar}'></img>`
-    : data.includes('join')
-      ? '<i class="fas fa-sun"></i>'
-      : '<i class="fas fa-moon"></i>';
+  ? `<img class='' src='${data.avatar}'></img>`
+  : data.includes('join')
+  ? '<i class="fas fa-sun"></i>'
+  : '<i class="fas fa-moon"></i>';
   avatarCircle.innerHTML = circleContent;
   avatarCircle.title = type === 'message'
-    ? data.name
-    : 'Server Notice';
+  ? data.name
+  : 'Server Notice';
   avatar.append(avatarCircle);
   if (type === 'message') {
     avatarCircle.onclick = () => {

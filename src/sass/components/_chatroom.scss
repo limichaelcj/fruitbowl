@@ -11,6 +11,7 @@
   background: $chatroom-bg;
   border: 2px solid $chatroom-border;
   border-radius: 25px;
+  font-size: 0.9rem;
 
   * {
     box-sizing: border-box;
@@ -170,7 +171,7 @@
     .chatroom__post--notice--joined {
       .chatroom__post__text {
         background-color: $chat-notice-joined-bg;
-        border: 2px solid rgba($chat-notice-joined-border, 0.2);
+        border: 2px solid $chat-notice-joined-border;
         color: $chat-notice-joined-text;
       }
       .chatroom__post__avatar__circle {
@@ -189,11 +190,17 @@
     }
     .chatroom__post--message {
       .chatroom__post__text {
-        background-color: $chat-message-bg;
-        border: 2px solid rgba($chat-message-border, 0.2);
         border-radius: 25px;
-        color: $chat-message-text;
         text-align: left;
+        border: 2px solid $chat-message-border;
+      }
+      .chatroom__post__text--self {
+        color: $chat-message-text-self;
+        background-color: $chat-message-bg-self;
+      }
+      .chatroom__post__text--other {
+        color: $chat-message-text-other;
+        background-color: $chat-message-bg-other;
       }
       .chatroom__post__avatar__circle {
         background-color: transparent;
