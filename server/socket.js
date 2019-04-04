@@ -30,7 +30,6 @@ module.exports = function(io) {
 
     socket.on('chat message', message => {
       const user = socket.request.user;
-      console.log(user);
       console.log(`Message received from ${user.username}: ${message}`)
       User.updateOne(
         { _id: user._id },
